@@ -1,0 +1,281 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#191a18">
+    <meta name="description" content="Reserve your table at HOUSE Coffee & Desserts and send your request directly via WhatsApp.">
+    <title>Reservation — HOUSE Coffee & Desserts</title>
+    <link rel="stylesheet" href="./css/styles.css">
+    <script src="./js/script.js" defer></script>
+  </head>
+  <body class="reservation-page">
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header class="site-header reservation-page-header" id="top">
+      <a class="wordmark" href="index.html#home" aria-label="HOUSE Coffee & Desserts home">
+        <span class="wordmark-name">HOUSE</span>
+        <span class="wordmark-caption">COFFEE & DESSERTS</span>
+      </a>
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Open navigation">
+        <span></span><span></span>
+      </button>
+      <nav class="site-nav" id="site-nav" aria-label="Main navigation">
+        <a href="index.html#home">Home</a>
+        <a href="about.html">About</a>
+        <a href="menu.html">Menu</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="reservation.html" aria-current="page">Reservation</a>
+        <a href="index.html#reviews">Reviews</a>
+        <a href="index.html#contact-actions">Contact</a>
+        <a href="index.html#location">Location</a>
+      </nav>
+    </header>
+
+    <main id="main">
+      <section class="reservation-section section-pad" aria-labelledby="reservation-title">
+        <div class="reservation-visual">
+          <div class="reservation-copy">
+            <span class="eyebrow">MAKE A PLAN</span>
+            <h1 id="reservation-title">Reserve Your Table</h1>
+            <p>Planning a coffee, meal, or special gathering? Reserve your table with us and enjoy a comfortable dining experience.</p>
+          </div>
+        </div>
+
+        <div class="reservation-card">
+          <form class="reservation-form" id="reservation-form" novalidate>
+            <div class="reservation-form-grid">
+              <div class="reservation-field">
+                <label for="reservation-name">Full Name</label>
+                <input id="reservation-name" name="name" type="text" placeholder="Enter your full name" required>
+              </div>
+
+              <div class="reservation-field">
+                <label for="reservation-phone">Phone Number</label>
+                <input id="reservation-phone" name="phone" type="tel" placeholder="Enter your phone number" required>
+              </div>
+
+              <div class="reservation-field">
+                <label for="reservation-email">Email Address</label>
+                <input id="reservation-email" name="email" type="email" placeholder="Enter your email address">
+              </div>
+
+              <div class="reservation-field">
+                <label for="reservation-date">Select Date</label>
+                <input id="reservation-date" name="date" type="date" required>
+              </div>
+
+              <div class="reservation-field">
+                <label for="reservation-time">Select Time</label>
+                <select id="reservation-time" name="time" required>
+                  <option value="">Choose a time</option>
+                </select>
+              </div>
+
+              <div class="reservation-field">
+                <label for="reservation-guests">Number of Guests</label>
+                <select id="reservation-guests" name="guests" required>
+                  <option value="">Select guests</option>
+                  <option>1 Guest</option>
+                  <option>2 Guests</option>
+                  <option>3 Guests</option>
+                  <option>4 Guests</option>
+                  <option>5 Guests</option>
+                  <option>6 Guests</option>
+                  <option>7 Guests</option>
+                  <option>8 Guests</option>
+                  <option>9 Guests</option>
+                  <option>10 Guests</option>
+                  <option>11+ Guests</option>
+                </select>
+                <small class="guest-note" id="guest-note">For larger groups, please contact us directly.</small>
+              </div>
+
+              <div class="reservation-field reservation-field-full">
+                <label for="reservation-seating">Preferred Seating</label>
+                <select id="reservation-seating" name="seating" required>
+                  <option value="">Select seating preference</option>
+                  <option>Indoor Seating</option>
+                  <option>Outdoor Seating</option>
+                  <option>Rooftop Seating</option>
+                  <option>No Preference</option>
+                </select>
+              </div>
+
+              <div class="reservation-field reservation-field-full">
+                <label for="reservation-request">Special Requests (Optional)</label>
+                <textarea id="reservation-request" name="request" rows="4" placeholder="Birthday celebration, window seat, high chair, accessibility requirements, or any other request..."></textarea>
+              </div>
+            </div>
+
+            <div class="reservation-actions">
+              <button class="button button-dark reservation-submit" type="submit">Reserve My Table <span aria-hidden="true">↗</span></button>
+            </div>
+
+            <p class="reservation-status" id="reservation-status" role="status" aria-live="polite"></p>
+
+            <div class="reservation-contact">
+              <p class="reservation-callout">Prefer to book directly?</p>
+              <div class="reservation-contact-row">
+                <a class="reservation-inline-link" href="tel:+923243338926">Call Us</a>
+                <a class="reservation-inline-link reservation-whatsapp" href="https://wa.me/923243338926" target="_blank" rel="noreferrer">Book via WhatsApp</a>
+              </div>
+            </div>
+          </form>
+
+          <aside class="reservation-info" aria-label="Reservation information">
+            <h2>Reservation Information</h2>
+            <ul>
+              <li><span>🕐</span> Reservation Hours: 7:00 AM – 2:00 AM Daily</li>
+              <li><span>👥</span> Large Groups: Please contact us directly</li>
+              <li><span>⏱️</span> Arrival: Please arrive 10 minutes before your reservation</li>
+              <li><span>📞</span> Same-Day Reservations: Call us directly</li>
+              <li><span>💬</span> Special Requests: Subject to availability</li>
+            </ul>
+          </aside>
+        </div>
+      </section>
+    </main>
+
+
+    <script>
+      const form = document.getElementById('reservation-form');
+      const dateInput = document.getElementById('reservation-date');
+      const timeSelect = document.getElementById('reservation-time');
+      const guestsSelect = document.getElementById('reservation-guests');
+      const guestNote = document.getElementById('guest-note');
+      const statusText = document.getElementById('reservation-status');
+
+      const today = new Date();
+      const minDate = new Date(today.getFullYear(), today.getMonth(), today.getDate());
+      const minDateValue = minDate.toISOString().split('T')[0];
+      dateInput.min = minDateValue;
+      dateInput.value = minDateValue;
+
+      const timeSlots = [
+        '07:00', '07:30', '08:00', '08:30', '09:00', '09:30', '10:00', '10:30', '11:00', '11:30',
+        '12:00', '12:30', '13:00', '13:30', '14:00', '14:30', '15:00', '15:30', '16:00', '16:30',
+        '17:00', '17:30', '18:00', '18:30', '19:00', '19:30', '20:00', '20:30', '21:00', '21:30',
+        '22:00', '22:30', '23:00', '23:30', '00:00', '00:30', '01:00', '01:30'
+      ];
+
+      timeSlots.forEach((time) => {
+        const option = document.createElement('option');
+        const [hours, minutes] = time.split(':').map(Number);
+        const hour12 = ((hours + 11) % 12) + 1;
+        const suffix = hours >= 12 ? 'PM' : 'AM';
+        const formatted = `${hour12}:${String(minutes).padStart(2, '0')} ${suffix}`;
+        option.value = time;
+        option.textContent = formatted;
+        timeSelect.appendChild(option);
+      });
+
+      function formatTimeDisplay(timeValue) {
+        const [hours, minutes] = timeValue.split(':').map(Number);
+        const hour12 = ((hours + 11) % 12) + 1;
+        const suffix = hours >= 12 ? 'PM' : 'AM';
+        return `${hour12}:${String(minutes).padStart(2, '0')} ${suffix}`;
+      }
+
+      guestsSelect.addEventListener('change', () => {
+        guestNote.style.display = guestsSelect.value === '11+ Guests' ? 'block' : 'none';
+      });
+
+      guestNote.style.display = 'none';
+
+      form.addEventListener('submit', (event) => {
+        event.preventDefault();
+        statusText.textContent = '';
+        statusText.classList.remove('is-error', 'is-success');
+
+        const name = document.getElementById('reservation-name').value.trim();
+        const phone = document.getElementById('reservation-phone').value.trim();
+        const email = document.getElementById('reservation-email').value.trim();
+        const selectedDate = dateInput.value;
+        const selectedTime = timeSelect.value;
+        const guests = guestsSelect.value;
+        const seating = document.getElementById('reservation-seating').value;
+
+        if (!name) {
+          statusText.textContent = 'Please enter your name.';
+          statusText.classList.add('is-error');
+          document.getElementById('reservation-name').focus();
+          return;
+        }
+
+        if (!phone) {
+          statusText.textContent = 'Please enter your phone number.';
+          statusText.classList.add('is-error');
+          document.getElementById('reservation-phone').focus();
+          return;
+        }
+
+        if (!selectedDate) {
+          statusText.textContent = 'Please select a reservation date.';
+          statusText.classList.add('is-error');
+          dateInput.focus();
+          return;
+        }
+
+        const selectedDateValue = new Date(`${selectedDate}T00:00:00`);
+        if (selectedDateValue < minDate) {
+          statusText.textContent = 'Please select today or a future date.';
+          statusText.classList.add('is-error');
+          dateInput.focus();
+          return;
+        }
+
+        if (!selectedTime) {
+          statusText.textContent = 'Please select a reservation time.';
+          statusText.classList.add('is-error');
+          timeSelect.focus();
+          return;
+        }
+
+        if (!guests) {
+          statusText.textContent = 'Please select the number of guests.';
+          statusText.classList.add('is-error');
+          guestsSelect.focus();
+          return;
+        }
+
+        if (!seating) {
+          statusText.textContent = 'Please select your seating preference.';
+          statusText.classList.add('is-error');
+          document.getElementById('reservation-seating').focus();
+          return;
+        }
+
+        const request = document.getElementById('reservation-request').value.trim();
+        const formattedDate = new Date(`${selectedDate}T00:00:00`).toLocaleDateString('en-US', { weekday: 'short', month: 'short', day: 'numeric', year: 'numeric' });
+        const formattedTime = formatTimeDisplay(selectedTime);
+
+        const message = [
+          'New Reservation Request',
+          '',
+          `Name: ${name}`,
+          `Phone: ${phone}`,
+          `Email: ${email || 'Not provided'}`,
+          `Date: ${formattedDate}`,
+          `Time: ${formattedTime}`,
+          `Guests: ${guests}`,
+          `Seating Preference: ${seating}`,
+          `Special Request: ${request || 'No special request'}`,
+          '',
+          'Please confirm this reservation with the customer.'
+        ].join('\n');
+
+        const encodedMessage = encodeURIComponent(message);
+        const whatsappLink = `https://wa.me/923243338926?text=${encodedMessage}`;
+
+        statusText.textContent = 'Reservation Request Received! Thank you! We\'ve received your reservation request. Your details have been sent to our team via WhatsApp. Our team will contact you shortly to confirm your reservation.';
+        statusText.classList.add('is-success');
+
+        window.open(whatsappLink, '_blank', 'noopener');
+        form.reset();
+        dateInput.value = minDateValue;
+        guestsSelect.value = '';
+        guestNote.style.display = 'none';
+      });
+    </script>
+  </body>
+</html>
